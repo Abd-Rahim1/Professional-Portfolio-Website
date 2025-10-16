@@ -71,28 +71,37 @@ const userData: User = {
       image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ],
-  experience: [
-    {
-      id: 1,
-      role: "Data Science Intern",
-      company: "Sartex Group",
-      location: "Ksar Hellal, Monastir",
-      startDate: "Jul 2025",
-      endDate: "Aug 2025",
-      description: 
-        `Prepared and cleaned the DeepFashion2 dataset for keypoint detection. 
-        Trained and fine-tuned Detectron2 models using transfer learning and developed a Tkinter-based GUI for annotation correction.`
-    },
-    {
-      id: 2,
-      role: "IT Intern – Network & Systems Support",
-      company: "Sartex Group",
-      location: "Ksar Hellal, Monastir",
-      startDate: "Jun 2024",
-      endDate: "Jul 2024",
-      description: "Assisted with system maintenance and network monitoring. Troubleshot hardware and software issues, gaining practical experience in IT support and system administration."
-    }
-  ],
+experience: [
+  {
+    id: 1,
+    role: "Data Science Intern",
+    company: "Sartex Group",
+    location: "Ksar Hellal, Monastir",
+    startDate: "Jul 2025",
+    endDate: "Aug 2025",
+    description: [
+      "Conducted comprehensive data preparation and cleaning on the DeepFashion2 dataset to ensure high-quality inputs for keypoint detection tasks.",
+      "Designed and implemented data augmentation and preprocessing pipelines to improve model accuracy.",
+      "Trained and fine-tuned Detectron2 models using advanced transfer learning techniques.",
+      "Developed a user-friendly Tkinter-based GUI to facilitate annotation correction and streamline the dataset labeling process.",
+      "Collaborated closely with the data science team to evaluate model performance and optimize detection accuracy."
+    ]
+  },
+  {
+    id: 2,
+    role: "IT Intern – Network & Systems Support",
+    company: "Sartex Group",
+    location: "Ksar Hellal, Monastir",
+    startDate: "Jun 2024",
+    endDate: "Jul 2024",
+    description: [
+      "Assisted with system maintenance and network monitoring.",
+      "Troubleshot hardware and software issues, gaining practical experience in IT support and system administration.",
+      "Worked with the IT team to optimize network performance and maintain system security."
+    ]
+  }
+],
+
   certifications: [
     {
       id: 1,
@@ -109,7 +118,12 @@ const userData: User = {
       institution: "Pristini School of AI",
       location: "Sousse , Tunisia",
       startDate: "2023",
-      endDate: "Present"
+      endDate: "Present",
+      description: [
+        "Specialized in Machine Learning, Deep Learning, and Computer Vision.",
+        "Completed multiple projects including data analysis and AI model development.",
+        "Gained practical experience with Python, TensorFlow, and data engineering tools."
+      ]
     },
   ],
   languages: [

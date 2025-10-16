@@ -38,7 +38,8 @@ export interface Experience {
   location: string;
   startDate: string;
   endDate: string;
-  description: string;
+  description?: string[]; 
+
 }
 
 export interface Certification {
@@ -56,6 +57,7 @@ export interface Education {
   location: string;
   startDate: string;
   endDate: string;
+  description?: string[]; 
 }
 
 export interface Skill {

@@ -22,7 +22,14 @@ const ExperienceList: React.FC = () => {
             </div>
           </div>
           
-          <p className="text-slate-700 mt-2">{job.description}</p>
+          {/* Render description as bullet points */}
+          <ul className="text-slate-700 mt-2 list-disc list-inside space-y-1">
+            {Array.isArray(job.description) ? (
+              job.description.map((desc, index) => <li key={index}>{desc}</li>)
+            ) : (
+              <li>{job.description}</li>
+            )}
+          </ul>
         </div>
       ))}
     </div>
