@@ -1,5 +1,5 @@
 import React, { createContext, useContext, ReactNode } from 'react';
-import { User, Project, Experience, Education, Certification, Skill, Languages } from '../types';
+import { User } from '../types';
 import myAvatar from "../assets/photo_profil.jpg";
 
 // Sample data - replace with your own
@@ -15,12 +15,13 @@ const userData: User = {
     linkedin: "https://linkedin.com/in/abd-rahim-mojbani-708887296",
     github: "https://github.com/Abd-Rahim1",
     twitter: "https://twitter.com/Abd_Rahim1",
-    },
+  },
   about: `
-    I am a second-year student specializing in Applied Artificial Intelligence at Pristini School of AI in Tunisia. 
-    My academic and project work reflect a strong interest in Machine Learning, Deep Learning, and the development of practical AI solutions. 
-    I have experience designing and implementing projects in Python, managing relational databases,
-    and completing internships focused on systems and network administration.
+    I am a final-year student specializing in Applied Artificial Intelligence at the Pristini School of AI in Tunisia. 
+    My studies and hands-on projects have strengthened my knowledge in Machine Learning, Deep Learning, and Computer Vision. 
+    I have practical experience preparing and training models, building interactive applications, and managing databases. 
+    Through internships at Sartex Group, I gained valuable skills in data science, model development, and IT systems management. 
+    I am passionate about applying AI techniques to solve real-world problems and contributing to innovative international projects.
   `,
   projects: [
     {
@@ -29,17 +30,18 @@ const userData: User = {
       description: "Terminal-based app for managing cinema data including movies, bookings, and admin tools.",
       technologies: ["C Language"],
       domain: "Desktop Applications",
-      link: "https://example.com/ecommerce",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600"
+      projectLink: "https://github.com/Abd-Rahim1/cinema-management-system.git",
+      image: "https://cutwatr.com/wp-content/uploads/2020/09/Picture7.jpg"
     },
     {
       id: 2,
       title: "Earthquake Detection System",
       description: "Predicts potential earthquake activity using ML models, integrated into a simple website for demo.",
-      technologies: ["Python", " ML libraries", "HTML", "CSS", "JavaScript"],
+      technologies: ["Python", "ML libraries", "HTML", "CSS", "JavaScript"],
       domain: "Machine Learning",
-      link: "https://abd-rahim1.github.io/Earthquake-Detection-System/",
-      image: "https://images.pexels.com/photos/1989820/pexels-photo-1989820.jpeg?auto=compress&cs=tinysrgb&w=600"
+      projectLink: "https://github.com/Abd-Rahim1/Earthquake-Detection-System",
+      demoLink: "https://abd-rahim1.github.io/Earthquake-Detection-System/",
+      image: "https://geovera.com/wp-content/uploads/2023/04/Richter-Scale.png"
     },
     {
       id: 3,
@@ -47,8 +49,8 @@ const userData: User = {
       description: "Real-time emotion detection system using webcam feed and convolutional neural networks.",
       technologies: ["Python", "TensorFlow", "Keras", "OpenCV"],
       domain: "Deep Learning",
-      link: "https://example.com/imageclassifier",
-      image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600"
+      projectLink: "https://example.com/imageclassifier",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR68yoFdxcAQWNFwU-kbOe4cthXhdsG6WNngw&s"
     },
     {
       id: 4,
@@ -56,69 +58,48 @@ const userData: User = {
       description: "Admin and Passenger interfaces for managing flight bookings with full backend and database support.",
       technologies: ["Python", "Java", "MySQL", "QtDesigner"],
       domain: "Desktop Applications",
-      link: "https://github.com/Abd-Rahim1/Airline-Management-Database-System.git",
-      image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600"
+      projectLink: "https://github.com/Abd-Rahim1/Airline-Management-Database-System.git",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0dyWsZM1iQYEGvNxh9TXmaHqX70zHvYb4Lg&s"
     },
     {
       id: 5,
       title: "Portfolio Website",
-      description: "A smart home system connecting various IoT devices for automated control and monitoring.",
-      technologies: ["HTML", "CSS", "typeScript", "React","tailwindCSS"],
+      description: "Personal portfolio website showcasing projects, resume, and interactive sections built with React, TypeScript, and Tailwind CSS.",
+      technologies: ["HTML", "CSS", "TypeScript", "React","TailwindCSS"],
       domain: "Web Development",
-      link: "https://example.com/homeautomation",
-      image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=600"
+      projectLink: "https://github.com/Abd-Rahim1/Professional-Portfolio-Website.git",
+      image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ],
   experience: [
     {
       id: 1,
-      role: "Senior Full Stack Developer",
-      company: "Tech Innovations Inc.",
-      location: "San Francisco, CA",
-      startDate: "Jan 2020",
-      endDate: "Present",
-      description: "Leading development of multiple web applications, mentoring junior developers, and implementing CI/CD pipelines."
+      role: "Data Science Intern",
+      company: "Sartex Group",
+      location: "Ksar Hellal, Monastir",
+      startDate: "Jul 2025",
+      endDate: "Aug 2025",
+      description: 
+        `Prepared and cleaned the DeepFashion2 dataset for keypoint detection. 
+        Trained and fine-tuned Detectron2 models using transfer learning and developed a Tkinter-based GUI for annotation correction.`
     },
     {
       id: 2,
-      role: "Web Developer",
-      company: "Digital Solutions LLC",
-      location: "Boston, MA",
-      startDate: "Mar 2018",
-      endDate: "Dec 2019",
-      description: "Developed and maintained various client websites and web applications using modern JavaScript frameworks."
-    },
-    {
-      id: 3,
-      role: "Junior Developer",
-      company: "StartUp Co.",
-      location: "New York, NY",
-      startDate: "Jun 2016",
-      endDate: "Feb 2018",
-      description: "Assisted in front-end development tasks and learned modern web development practices in an agile environment."
+      role: "IT Intern – Network & Systems Support",
+      company: "Sartex Group",
+      location: "Ksar Hellal, Monastir",
+      startDate: "Jun 2024",
+      endDate: "Jul 2024",
+      description: "Assisted with system maintenance and network monitoring. Troubleshot hardware and software issues, gaining practical experience in IT support and system administration."
     }
   ],
   certifications: [
     {
       id: 1,
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2021",
-      link: "https://example.com/cert1"
-    },
-    {
-      id: 2,
-      title: "Professional Scrum Master I",
-      issuer: "Scrum.org",
-      date: "2020",
-      link: "https://example.com/cert2"
-    },
-    {
-      id: 3,
-      title: "Google Cloud Professional Developer",
-      issuer: "Google",
-      date: "2019",
-      link: "https://example.com/cert3"
+      title: "Image Segmentation, Filtering & Region Analysis",
+      issuer: "Coursera (MathWorks)",
+      date: "2025",
+      link: "https://www.coursera.org/account/accomplishments"
     }
   ],
   education: [
@@ -137,14 +118,20 @@ const userData: User = {
     { name: "Arabic", level: "Native" }
   ],
   skills: [
-    { name: "JavaScript", level: 95 },
-    { name: "React", level: 90 },
-    { name: "Node.js", level: 85 },
-    { name: "Python", level: 80 },
-    { name: "AWS", level: 75 },
-    { name: "MongoDB", level: 70 },
-    { name: "Docker", level: 65 },
-    { name: "GraphQL", level: 60 }
+    { name: "Python", level: 95 },
+    { name: "Machine Learning", level: 90 },
+    { name: "Deep Learning", level: 88 },
+    { name: "Computer Vision", level: 85 },
+    { name: "Data Analysis", level: 83 },
+    { name: "TensorFlow", level: 80 },
+    { name: "Detectron2", level: 78 },
+    { name: "OpenCV", level: 78 },
+    { name: "SQL", level: 75 },
+    { name: "Java", level: 72 },
+    { name: "HTML/CSS/JavaScript", level: 70 },
+    { name: "Git & GitHub", level: 68 },
+    { name: "Problem Solving", level: 90 },
+    { name: "Team Collaboration", level: 85 }
   ]
 };
 

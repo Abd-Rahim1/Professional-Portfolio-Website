@@ -11,14 +11,28 @@ const ProjectsList: React.FC = () => {
         <div key={project.id} className="border-b border-slate-200 pb-6 last:border-b-0 last:pb-0">
           <div className="flex justify-between items-start">
             <h4 className="text-lg font-medium text-slate-800">{project.title}</h4>
-            <a 
-              href={project.link} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 flex items-center text-sm transition-colors"
-            >
-              View Project <ExternalLink size={14} className="ml-1" />
-            </a>
+            <div className="flex gap-4">
+              {project.projectLink && (
+                <a 
+                  href={project.projectLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 flex items-center text-sm transition-colors"
+                >
+                  View Project <ExternalLink size={14} className="ml-1" />
+                </a>
+              )}
+              {project.demoLink && (
+                <a 
+                  href={project.demoLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-green-600 hover:text-green-800 flex items-center text-sm transition-colors"
+                >
+                  View Demo <ExternalLink size={14} className="ml-1" />
+                </a>
+              )}
+            </div>
           </div>
           
           <p className="text-slate-600 mt-2">{project.description}</p>

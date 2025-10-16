@@ -9,6 +9,8 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <div className="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+      
+      {/* Project Image */}
       <div className="h-48 overflow-hidden">
         <img 
           src={project.image} 
@@ -17,6 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         />
       </div>
       
+      {/* Project Details */}
       <div className="p-4">
         <div className="flex justify-between items-start">
           <h3 className="text-lg font-semibold text-slate-800">{project.title}</h3>
@@ -24,11 +27,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.domain}
           </span>
         </div>
-        
+
         <p className="text-slate-600 mt-2 text-sm line-clamp-3">
           {project.description}
         </p>
-        
+
         <div className="mt-4 flex flex-wrap gap-1">
           {project.technologies.map((tech, index) => (
             <span 
@@ -39,15 +42,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </span>
           ))}
         </div>
-        
-        <a 
-          href={project.link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium"
-        >
-          View Project <ExternalLink size={14} className="ml-1" />
-        </a>
+
+        {/* Links */}
+        <div className="mt-4 flex gap-3">
+          {project.projectLink && (
+            <a 
+              href={project.projectLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium"
+            >
+              View Project <ExternalLink size={14} className="ml-1" />
+            </a>
+          )}
+
+          {project.demoLink && (
+            <a 
+              href={project.demoLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-green-600 hover:text-green-800 transition-colors text-sm font-medium"
+            >
+              View Demo <ExternalLink size={14} className="ml-1" />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

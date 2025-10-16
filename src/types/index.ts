@@ -26,7 +26,8 @@ export interface Project {
   description: string;
   technologies: string[];
   domain: string;
-  link: string;
+  projectLink?: string; // optional for projects without a repo link
+  demoLink?: string;    // optional for projects without a demo
   image: string;
 }
 
