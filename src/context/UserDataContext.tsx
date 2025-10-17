@@ -10,7 +10,7 @@ const userData: User = {
   phone: "+216 96-957-283",
   location: "Monatir, Tunisia",
   avatarUrl: myAvatar,
-  cvLink: "/CV_AbdRahim_Mojbani.pdf",
+  cvLink: "/Professional-Portfolio-Website/CV_Abd-Rahim-Mojbani.pdf",
   socialLinks: {
     linkedin: "https://linkedin.com/in/abd-rahim-mojbani-708887296",
     github: "https://github.com/Abd-Rahim1",
