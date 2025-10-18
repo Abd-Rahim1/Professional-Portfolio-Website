@@ -37,7 +37,7 @@ const userData: User = {
       id: 2,
       title: "Earthquake Detection System",
       description: "Predicts potential earthquake activity using ML models, integrated into a simple website for demo.",
-      technologies: ["Python", "ML libraries", "HTML", "CSS", "JavaScript"],
+      technologies: ["Python", "ML libraries", "HTML", "CSS", "JavaScript","Agile Methodologies"],
       domain: "Machine Learning",
       projectLink: "https://github.com/Abd-Rahim1/Earthquake-Detection-System",
       demoLink: "https://abd-rahim1.github.io/Earthquake-Detection-System/",
@@ -69,6 +69,15 @@ const userData: User = {
       domain: "Web Development",
       projectLink: "https://github.com/Abd-Rahim1/Professional-Portfolio-Website.git",
       image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      id: 6,
+      title: "Trousers Keypoint Detection System",
+      description: "Built an AI system to detect keypoints on trousers using deep learning and computer vision for automated garment analysis.",
+      technologies: ["Python","DeepFashion2 Dataset","Detectron2" ,"OpenCV","TensorFlow", "Tkinter"],
+      domain: "Computer Vision ",
+      projectLink: "https://github.com/Abd-Rahim1/Trousers-Keypoint-Detection",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShYubu42x6tUAXb_bUYNQmvbZdBIxJw4MkaQ&s"
     }
   ],
 experience: [
