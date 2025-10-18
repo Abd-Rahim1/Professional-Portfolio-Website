@@ -65,7 +65,7 @@ const Sidebar: React.FC = () => {
       {/* 📄 View CV Button with Icon + Animation */}
       <div className="flex justify-center mt-8">
         <a
-          href="CV_Abd-Rahim-Mojban.pdf"
+          href="CV_Rahim.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition duration-300 ease-in-out"
