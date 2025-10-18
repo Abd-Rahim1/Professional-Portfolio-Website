@@ -21,6 +21,22 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // Function to handle clicking a section (mobile-only auto-close)
+  const handleSectionClick = (sectionId: string) => {
+    setActiveSection(sectionId);
+
+    // Only close mobile menu on small screens
+    if (window.innerWidth < 768) {
+      setMobileMenuOpen(false);
+    }
+
+    // Scroll smoothly to the section if it exists
+    const sectionEl = document.getElementById(sectionId);
+    if (sectionEl) {
+      sectionEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="bg-slate-800 text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
                     ? 'bg-slate-700 text-white' 
                     : 'text-slate-300 hover:bg-slate-700 hover:text-white'
                   }`}
-                onClick={() => setActiveSection(item.id)}
+                onClick={() => handleSectionClick(item.id)}
               >
                 {item.label}
               </button>
@@ -71,10 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
                     ? 'bg-slate-600 text-white' 
                     : 'text-slate-300 hover:bg-slate-600 hover:text-white'
                   }`}
-                onClick={() => {
-                  setActiveSection(item.id);
-                  setMobileMenuOpen(false);
-                }}
+                onClick={() => handleSectionClick(item.id)}
               >
                 {item.label}
               </button>

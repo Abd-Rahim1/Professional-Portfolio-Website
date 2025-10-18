@@ -27,7 +27,9 @@ function App() {
       <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col">
         <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
         <main className="flex flex-col md:flex-row flex-grow">
-          <Sidebar />
+          {/* Pass activeSection so Sidebar knows when to display */}
+          <Sidebar activeSection={activeSection} />
+          
           <div className="w-full md:w-3/4 p-6 animate-fadeIn">
             {renderContent()}
           </div>

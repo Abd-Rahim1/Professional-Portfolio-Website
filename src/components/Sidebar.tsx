@@ -2,11 +2,19 @@ import React from 'react';
 import * as Lucide from 'lucide-react';
 import { useUserData } from '../context/UserDataContext';
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  activeSection: string;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ activeSection }) => {
   const { userData } = useUserData();
+
+  // Only display sidebar if About Me section is active
+  if (activeSection !== 'about') return null;
 
   return (
     <aside className="w-full md:w-1/4 bg-white shadow-md p-6 md:min-h-screen">
+      {/* Profile Info */}
       <div className="flex flex-col items-center">
         <div className="relative w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-slate-200">
           <img 
@@ -19,6 +27,7 @@ const Sidebar: React.FC = () => {
         <p className="text-slate-600 mb-6">{userData.title}</p>
       </div>
 
+      {/* Contact Info */}
       <div className="space-y-4 mt-6">
         <div className="flex items-center space-x-3">
           <Lucide.Mail size={18} className="text-slate-500" />
@@ -38,31 +47,22 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
 
+      {/* Social Links */}
       <div className="mt-8">
-        <h3 className="text-lg font-semibold text-slate-800 mb-3 border-b border-slate-200 pb-2">Social Links</h3>
-        <div className="flex justify-center space-x-4 mt-4">
-          <a 
-            href={userData.socialLinks.linkedin} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-slate-600 hover:text-blue-600 transition-colors"
-            aria-label="LinkedIn"
-          >
+        <h3 className="text-lg font-semibold text-slate-800 mb-3 border-b border-slate-200 pb-2">
+          Social Links
+        </h3>
+        <div className="flex justify-center space-x-4">
+          <a href={userData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
             <Lucide.Linkedin size={20} />
           </a>
-          <a 
-            href={userData.socialLinks.github} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-slate-600 hover:text-slate-900 transition-colors"
-            aria-label="GitHub"
-          >
+          <a href={userData.socialLinks.github} target="_blank" rel="noopener noreferrer">
             <Lucide.Github size={20} />
           </a>
         </div>
       </div>
 
-      {/* 📄 View CV Button with Icon + Animation */}
+      {/* View CV Button */}
       <div className="flex justify-center mt-8">
         <a
           href="CV_Rahim.pdf"
