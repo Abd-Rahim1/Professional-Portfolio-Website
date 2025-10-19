@@ -9,56 +9,89 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ activeSection }) => {
   const { userData } = useUserData();
 
-  // Only display sidebar if About Me section is active
   if (activeSection !== 'about') return null;
 
   return (
-    <aside className="w-full md:w-1/4 bg-white shadow-md p-6 md:min-h-screen">
+    <aside
+      className="w-full md:w-1/4 bg-white shadow-md p-6 overflow-y-auto border-b md:border-r border-slate-200 z-10
+                 md:fixed md:top-[64px] md:left-0 md:h-[calc(100%-64px)]"
+    >
       {/* Profile Info */}
       <div className="flex flex-col items-center">
-        <div className="relative w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-slate-200">
-          <img 
-            src={userData.avatarUrl} 
-            alt={userData.name} 
+        <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-4 border-4 border-slate-200">
+          <img
+            src={userData.avatarUrl}
+            alt={userData.name}
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
-        <h2 className="text-2xl font-bold text-slate-800">{userData.name}</h2>
-        <p className="text-slate-600 mb-6">{userData.title}</p>
+        <h2 className="text-2xl font-bold text-slate-800 text-center">{userData.name}</h2>
+        <p className="text-slate-600 mb-6 text-center">{userData.title}</p>
       </div>
 
       {/* Contact Info */}
       <div className="space-y-4 mt-6">
-        <div className="flex items-center space-x-3">
-          <Lucide.Mail size={18} className="text-slate-500" />
-          <a href={`mailto:${userData.email}`} className="text-slate-700 hover:text-blue-600 transition-colors">
+        <div className="flex items-center space-x-3 justify-start">
+          <Lucide.Mail
+            size={18}
+            className="text-slate-500 transform transition-transform duration-300 hover:scale-125 hover:text-blue-600"
+          />
+          <a
+            href={`mailto:${userData.email}`}
+            className="text-slate-700 hover:text-blue-600 transition-colors text-sm md:text-base"
+          >
             {userData.email}
           </a>
         </div>
-        <div className="flex items-center space-x-3">
-          <Lucide.Phone size={18} className="text-slate-500" />
-          <a href={`tel:${userData.phone}`} className="text-slate-700 hover:text-blue-600 transition-colors">
+
+        <div className="flex items-center space-x-3 justify-start">
+          <Lucide.Phone
+            size={18}
+            className="text-slate-500 transform transition-transform duration-300 hover:scale-125 hover:text-green-600"
+          />
+          <a
+            href={`tel:${userData.phone}`}
+            className="text-slate-700 hover:text-green-600 transition-colors text-sm md:text-base"
+          >
             {userData.phone}
           </a>
         </div>
-        <div className="flex items-center space-x-3">
-          <Lucide.MapPin size={18} className="text-slate-500" />
-          <span className="text-slate-700">{userData.location}</span>
+
+        <div className="flex items-center space-x-3 justify-start">
+          <Lucide.MapPin
+            size={18}
+            className="text-slate-500 transform transition-transform duration-300 hover:scale-125 hover:text-red-600"
+          />
+          <span className="text-slate-700 text-sm md:text-base">{userData.location}</span>
         </div>
       </div>
 
-      {/* Social Links */}
+      {/* Social Links (Centered) */}
       <div className="mt-8">
-        <h3 className="text-lg font-semibold text-slate-800 mb-3 border-b border-slate-200 pb-2">
+        <h3 className="text-lg font-semibold text-slate-800 mb-3 border-b border-slate-200 pb-2 text-center">
           Social Links
         </h3>
         <div className="flex justify-center space-x-4">
-          <a href={userData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
-            <Lucide.Linkedin size={20} />
-          </a>
-          <a href={userData.socialLinks.github} target="_blank" rel="noopener noreferrer">
-            <Lucide.Github size={20} />
-          </a>
+          {userData.socialLinks.linkedin && (
+            <a
+              href={userData.socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transform transition-transform duration-300 hover:scale-125 hover:text-blue-600"
+            >
+              <Lucide.Linkedin size={20} />
+            </a>
+          )}
+          {userData.socialLinks.github && (
+            <a
+              href={userData.socialLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transform transition-transform duration-300 hover:scale-125 hover:text-gray-800"
+            >
+              <Lucide.Github size={20} />
+            </a>
+          )}
         </div>
       </div>
 
@@ -68,7 +101,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection }) => {
           href="CV_Rahim.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition duration-300 ease-in-out"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold
+                     hover:bg-blue-700 transform hover:scale-105 transition duration-300 ease-in-out"
         >
           <Lucide.FileText size={18} />
           View My CV

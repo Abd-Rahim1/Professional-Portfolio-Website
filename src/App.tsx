@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import AboutMe from './components/AboutMe';
@@ -8,6 +8,14 @@ import { UserDataProvider } from './context/UserDataContext';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
+
+  // 🔹 Scroll to top whenever active section changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // smooth scroll effect
+    });
+  }, [activeSection]);
 
   const renderContent = () => {
     switch (activeSection) {
@@ -28,13 +36,15 @@ function App() {
         {/* Navbar */}
         <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
 
-        {/* Main content */}
-        <main className="flex flex-col md:flex-row flex-grow">
-          {/* Sidebar only shows in About Me section */}
-          <Sidebar activeSection={activeSection} />
+        {/* Main layout */}
+        <main className="flex flex-col md:flex-row flex-grow relative">
+          {activeSection === 'about' && <Sidebar activeSection={activeSection} />}
 
-          {/* Section content */}
-          <div className="w-full md:w-3/4 p-6 animate-fadeIn">
+          <div
+            className={`p-6 animate-fadeIn transition-all duration-300 ${
+              activeSection === 'about' ? 'w-full md:ml-[25%] md:w-3/4' : 'w-full'
+            }`}
+          >
             {renderContent()}
           </div>
         </main>
