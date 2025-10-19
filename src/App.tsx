@@ -25,15 +25,21 @@ function App() {
   return (
     <UserDataProvider>
       <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col">
+        {/* Navbar */}
         <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+
+        {/* Main content */}
         <main className="flex flex-col md:flex-row flex-grow">
-          {/* Pass activeSection so Sidebar knows when to display */}
+          {/* Sidebar only shows in About Me section */}
           <Sidebar activeSection={activeSection} />
-          
+
+          {/* Section content */}
           <div className="w-full md:w-3/4 p-6 animate-fadeIn">
             {renderContent()}
           </div>
         </main>
+
+        {/* Footer */}
         <footer className="bg-slate-800 text-white text-center py-4 text-sm">
           <p>© {new Date().getFullYear()} - Portfolio Website</p>
         </footer>

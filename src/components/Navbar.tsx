@@ -21,16 +21,13 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Function to handle clicking a section (mobile-only auto-close)
   const handleSectionClick = (sectionId: string) => {
     setActiveSection(sectionId);
 
-    // Only close mobile menu on small screens
     if (window.innerWidth < 768) {
       setMobileMenuOpen(false);
     }
 
-    // Scroll smoothly to the section if it exists
     const sectionEl = document.getElementById(sectionId);
     if (sectionEl) {
       sectionEl.scrollIntoView({ behavior: 'smooth' });
@@ -38,14 +35,14 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
   };
 
   return (
-    <nav className="bg-slate-800 text-white shadow-md">
+    <nav className="bg-slate-800 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <h1 className="text-xl font-bold">{userData.name}</h1>
             <p className="ml-3 text-slate-300 hidden sm:block">| {userData.title}</p>
           </div>
-          
+
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
@@ -62,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
               </button>
             ))}
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
@@ -74,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
           </div>
         </div>
       </div>
-      
+
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden">
