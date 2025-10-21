@@ -11,19 +11,19 @@ const ExperienceList: React.FC = () => {
           <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-1.5"></div>
           
           <div className="mb-1">
-            <h4 className="text-lg font-medium text-slate-800">{job.role}</h4>
+            <h4 className="text-lg font-medium text-slate-800 dark:text-white">{job.role}</h4>
             <div className="flex flex-wrap justify-between items-baseline">
-              <p className="text-slate-600">
+              <p className="text-slate-600 dark:text-slate-300">
                 {job.company}, {job.location}
               </p>
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-slate-500 dark:text-slate-400">
                 {job.startDate} — {job.endDate}
               </p>
             </div>
           </div>
           
           {/* Render description as bullet points */}
-          <ul className="text-slate-700 mt-2 list-disc list-inside space-y-1">
+          <ul className="text-slate-700 dark:text-slate-200 mt-2 list-disc list-inside space-y-1">
             {Array.isArray(job.description) ? (
               job.description.map((desc, index) => <li key={index}>{desc}</li>)
             ) : (

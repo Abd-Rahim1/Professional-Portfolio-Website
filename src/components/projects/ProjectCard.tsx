@@ -8,7 +8,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
       
       {/* Project Image */}
       <div className="h-48 overflow-hidden">
@@ -22,13 +22,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {/* Project Details */}
       <div className="p-4">
         <div className="flex justify-between items-start">
-          <h3 className="text-lg font-semibold text-slate-800">{project.title}</h3>
-          <span className="text-xs font-medium bg-slate-100 text-slate-700 px-2 py-1 rounded">
+          <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">{project.title}</h3>
+          <span className="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2 py-1 rounded">
             {project.domain}
           </span>
         </div>
 
-        <p className="text-slate-600 mt-2 text-sm line-clamp-3">
+        <p className="text-slate-600 dark:text-slate-300 mt-2 text-sm line-clamp-3">
           {project.description}
         </p>
 
@@ -36,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.technologies.map((tech, index) => (
             <span 
               key={index}
-              className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded"
+              className="text-xs bg-blue-50 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded"
             >
               {tech}
             </span>
@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               href={project.projectLink} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium"
+              className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 transition-colors text-sm font-medium"
             >
               View Project <ExternalLink size={14} className="ml-1" />
             </a>
@@ -61,7 +61,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               href={project.demoLink} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center text-green-600 hover:text-green-800 transition-colors text-sm font-medium"
+              className="inline-flex items-center text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-200 transition-colors text-sm font-medium"
             >
               View Demo <ExternalLink size={14} className="ml-1" />
             </a>

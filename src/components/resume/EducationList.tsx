@@ -11,18 +11,18 @@ const EducationList: React.FC = () => {
           <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-1.5"></div>
 
           <div className="mb-1">
-            <h4 className="text-lg font-medium text-slate-800">{edu.degree}</h4>
+            <h4 className="text-lg font-medium text-slate-800 dark:text-white">{edu.degree}</h4>
             <div className="flex flex-wrap justify-between items-baseline">
-              <p className="text-slate-600">
+              <p className="text-slate-600 dark:text-slate-300">
                 {edu.institution}, {edu.location}
               </p>
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-slate-500 dark:text-slate-400">
                 {edu.startDate} — {edu.endDate}
               </p>
             </div>
 
             {edu.description && (
-              <div className="mt-2 space-y-1 text-slate-600">
+              <div className="mt-2 space-y-1 text-slate-600 dark:text-slate-200">
                 {edu.description.map((line, index) => (
                   <p key={index}>{line}</p>
                 ))}

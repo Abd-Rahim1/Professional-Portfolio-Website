@@ -13,9 +13,11 @@ const Resume: React.FC = () => {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
+  const sectionClasses = "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 p-4";
+
   return (
     <section className="animate-fadeIn">
-      <h2 className="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-blue-500 pb-2 inline-block">
+      <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-200 mb-6 border-b-2 border-blue-500 pb-2 inline-block">
         Resume
       </h2>
       
@@ -25,6 +27,7 @@ const Resume: React.FC = () => {
           title="Experience" 
           isExpanded={expandedSection === 'experience'} 
           toggleExpand={() => toggleSection('experience')}
+          className={sectionClasses}
         >
           <ExperienceList />
         </ResumeSection>
@@ -33,6 +36,7 @@ const Resume: React.FC = () => {
           title="Certifications & Licenses" 
           isExpanded={expandedSection === 'certifications'} 
           toggleExpand={() => toggleSection('certifications')}
+          className={sectionClasses}
         >
           <CertificationsList />
         </ResumeSection>
@@ -41,6 +45,7 @@ const Resume: React.FC = () => {
           title="Education" 
           isExpanded={expandedSection === 'education'} 
           toggleExpand={() => toggleSection('education')}
+          className={sectionClasses}
         >
           <EducationList />
         </ResumeSection>
@@ -49,14 +54,16 @@ const Resume: React.FC = () => {
           title="Skills" 
           isExpanded={expandedSection === 'skills'} 
           toggleExpand={() => toggleSection('skills')}
+          className={sectionClasses}
         >
           <SkillsList />
         </ResumeSection>
         
-      <ResumeSection 
+        <ResumeSection 
           title="Languages" 
           isExpanded={expandedSection === 'languages'} 
           toggleExpand={() => toggleSection('languages')}
+          className={sectionClasses}
         >
           <LanguageList />
         </ResumeSection>
