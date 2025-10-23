@@ -76,8 +76,17 @@ const userData: User = {
       description: "Built an AI system to detect keypoints on trousers using deep learning and computer vision for automated garment analysis.",
       technologies: ["Python","DeepFashion2 Dataset","Detectron2" ,"OpenCV","TensorFlow", "Tkinter"],
       domain: "Computer Vision ",
-      projectLink: "https://github.com/Abd-Rahim1/Trousers-Keypoint-Detection",
+      projectLink: "https://github.com/Abd-Rahim1/Trouser-Keypoint-Detection-System.git",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShYubu42x6tUAXb_bUYNQmvbZdBIxJw4MkaQ&s"
+    },
+    {
+      id: 7,
+      title: "Vision-Based Car Damage Detection",
+      description: "Developed an end-to-end MLOps pipeline for vehicle damage detection, segmentation, and classification using deep learning and computer vision. Integrated data versioning (DVC), model tracking, and automated deployment.",
+      technologies: ["Python", "YOLOv8", "Detectron2", "ResNet", "EfficientNet", "FastAPI", "Flutter", "Power BI", "DVC", "OpenCV"],
+      domain: "Computer Vision / MLOps",
+      projectLink: "https://github.com/Abd-Rahim1/vision-based-car-damage-detection",
+      image: "https://intelliarts.com/wp-content/uploads/2023/04/1f990c_d3a66935e5634422b06e7e9b074e6091mv2-e1694509810261.webp"
     }
   ],
 experience: [
