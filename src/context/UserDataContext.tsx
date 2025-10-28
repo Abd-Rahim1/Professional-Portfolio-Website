@@ -92,7 +92,7 @@ const userData: User = {
 experience: [
   {
     id: 1,
-    role: "Data Science Intern",
+    role: "Data Science Intern - Deep Learning Pipeline for Trouser Keypoint Detection",
     company: "Sartex Group",
     location: "Ksar Hellal, Monastir",
     startDate: "Jul 2025",
