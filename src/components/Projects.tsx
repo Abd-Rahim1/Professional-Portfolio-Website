@@ -7,16 +7,21 @@ const Projects: React.FC = () => {
   const { userData } = useUserData();
   const [selectedDomain, setSelectedDomain] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [expandedProjectId, setExpandedProjectId] = useState<number | null>(null);
 
-  const domains = Array.from(new Set(userData.projects.map(project => project.domain)));
+  const domains = Array.from(new Set(userData.projects.map((project) => project.domain)));
 
-  const filteredProjects = userData.projects.filter(project => {
+  const filteredProjects = userData.projects.filter((project) => {
     const matchesDomain = selectedDomain ? project.domain === selectedDomain : true;
     const matchesSearch =
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesDomain && matchesSearch;
   });
+
+  const handleToggle = (id: number) => {
+    setExpandedProjectId(expandedProjectId === id ? null : id);
+  };
 
   return (
     <section className="animate-fadeIn">
@@ -73,7 +78,12 @@ const Projects: React.FC = () => {
         {filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard
+                key={project.id}
+                project={project}
+                expanded={expandedProjectId === project.id}
+                onToggle={() => handleToggle(project.id)}
+              />
             ))}
           </div>
         ) : (
