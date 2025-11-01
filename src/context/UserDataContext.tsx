@@ -133,7 +133,7 @@ certifications: [
     title: "Building Transformer-Based Natural Language Processing Applications",
     issuer: "NVIDIA",
     date: "2025",
-    link: "https://learn.nvidia.com/certificates?id"
+    link: "/nvidia_nlp_certificate.pdf"
   }
 ],
   education: [
