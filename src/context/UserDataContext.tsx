@@ -120,15 +120,22 @@ experience: [
   }
 ],
 
-  certifications: [
-    {
-      id: 1,
-      title: "Image Segmentation, Filtering & Region Analysis",
-      issuer: "Coursera (MathWorks)",
-      date: "2025",
-      link: "https://www.coursera.org/account/accomplishments"
-    }
-  ],
+certifications: [
+  {
+    id: 1,
+    title: "Image Segmentation, Filtering & Region Analysis",
+    issuer: "Coursera (MathWorks)",
+    date: "2025",
+    link: "https://www.coursera.org/account/accomplishments"
+  },
+  {
+    id: 2,
+    title: "Building Transformer-Based Natural Language Processing Applications",
+    issuer: "NVIDIA",
+    date: "2025",
+    link: "https://learn.nvidia.com/certificates?id"
+  }
+],
   education: [
     {
       id: 1,
