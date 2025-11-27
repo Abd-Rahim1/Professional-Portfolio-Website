@@ -134,7 +134,14 @@ certifications: [
     issuer: "NVIDIA",
     date: "2025",
     link: "/nvidia_nlp_certificate.pdf"
-  }
+  },
+  {
+    id: 3,
+    title: "Building RAG Agents with LLMs",
+    issuer: "NVIDIA",
+    date: "2025",
+    link: "https://learn.nvidia.com/certificates?id=5obFKRq2TZKN2G6MPE9ovw#"
+  }  
 ],
   education: [
     {
