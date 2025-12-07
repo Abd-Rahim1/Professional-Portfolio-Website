@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Award, Globe, Briefcase, GraduationCap, Cpu } from 'lucide-react';
 import ResumeSection from './resume/ResumeSection';
 import ExperienceList from './resume/ExperienceList';
 import CertificationsList from './resume/CertificationsList';
@@ -8,7 +9,7 @@ import LanguageList from './resume/LanguageList';
 
 const Resume: React.FC = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>('experience');
-  
+
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
   };
@@ -20,50 +21,55 @@ const Resume: React.FC = () => {
       <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-200 mb-6 border-b-2 border-blue-500 pb-2 inline-block">
         Resume
       </h2>
-      
+
       <div className="space-y-6">
-        
-        <ResumeSection 
-          title="Experience" 
-          isExpanded={expandedSection === 'experience'} 
+
+        <ResumeSection
+          title="Experience"
+          isExpanded={expandedSection === 'experience'}
           toggleExpand={() => toggleSection('experience')}
           className={sectionClasses}
+          icon={<Briefcase size={24} />}
         >
           <ExperienceList />
         </ResumeSection>
-        
-        <ResumeSection 
-          title="Certifications & Licenses" 
-          isExpanded={expandedSection === 'certifications'} 
+
+        <ResumeSection
+          title="Certifications & Licenses"
+          isExpanded={expandedSection === 'certifications'}
           toggleExpand={() => toggleSection('certifications')}
           className={sectionClasses}
+          icon={<Award size={24} />}
         >
           <CertificationsList />
         </ResumeSection>
-        
-        <ResumeSection 
-          title="Education" 
-          isExpanded={expandedSection === 'education'} 
+
+        <ResumeSection
+          title="Education"
+          isExpanded={expandedSection === 'education'}
           toggleExpand={() => toggleSection('education')}
           className={sectionClasses}
+          icon={<GraduationCap size={24} />}
         >
           <EducationList />
         </ResumeSection>
-        
-        <ResumeSection 
-          title="Skills" 
-          isExpanded={expandedSection === 'skills'} 
+
+        <ResumeSection
+          title="Skills"
+          isExpanded={expandedSection === 'skills'}
           toggleExpand={() => toggleSection('skills')}
           className={sectionClasses}
+          icon={<Cpu size={24} />}
         >
           <SkillsList />
         </ResumeSection>
-        
-        <ResumeSection 
-          title="Languages" 
-          isExpanded={expandedSection === 'languages'} 
+
+        <ResumeSection
+          title="Languages"
+          isExpanded={expandedSection === 'languages'}
           toggleExpand={() => toggleSection('languages')}
           className={sectionClasses}
+          icon={<Globe size={24} />}
         >
           <LanguageList />
         </ResumeSection>

@@ -9,7 +9,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ activeSection }) => {
   const { userData } = useUserData();
 
-  if (activeSection !== 'about') return null;
+  if (activeSection !== 'home') return null;
 
   // --- Typewriter animation for title ---
   const fullText = userData.title || 'Applied AI Student';
