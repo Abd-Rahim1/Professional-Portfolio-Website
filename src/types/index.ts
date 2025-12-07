@@ -1,3 +1,4 @@
+// src/types/index.ts
 export interface User {
   name: string;
   title: string;
@@ -16,7 +17,7 @@ export interface User {
   experience: Experience[];
   certifications: Certification[];
   education: Education[];
-  languages: Languages;
+  languages: Language[];
   skills: Skill[];
 }
 
@@ -26,8 +27,8 @@ export interface Project {
   description: string;
   technologies: string[];
   domain: string;
-  projectLink?: string; // optional for projects without a repo link
-  demoLink?: string;    // optional for projects without a demo
+  projectLink?: string;
+  demoLink?: string;
   image: string;
 }
 
@@ -38,8 +39,9 @@ export interface Experience {
   location: string;
   startDate: string;
   endDate: string;
-  description?: string[]; 
-
+  description?: string[];
+  sartexlogo: string;
+  skills?: string[];
 }
 
 export interface Certification {
@@ -47,27 +49,30 @@ export interface Certification {
   title: string;
   issuer: string;
   date: string;
+  image?: string;
+  logo?: string;
   link: string;
+  pdf?: string;
 }
 
 export interface Education {
   id: number;
+  type: 'University' | 'Course';
   degree: string;
   institution: string;
   location: string;
   startDate: string;
   endDate: string;
-  description?: string[]; 
+  logo: string;
+  description?: string[];
 }
 
 export interface Skill {
   name: string;
   level: number;
 }
-export type Language = {
+
+export interface Language {
   name: string;
   level: string;
-};
-
-export type Languages = Language[];
-
+}
