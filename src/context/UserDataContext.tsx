@@ -1,8 +1,12 @@
 import React, { createContext, useContext, ReactNode } from 'react';
 import { User } from '../types';
 import myAvatar from "../assets/photo_profil.jpg";
+import logo from '../assets/universities/pristini.png';
+import sartexlogo from '../assets/universities/sartex.png';
+import nvidialogo from '../assets/universities/nvidia.png';
+import mathworkslogo from '../assets/universities/MathWorks.jpg';
 
-// Sample data - replace with your own
+
 const userData: User = {
   name: "Abd Rahim Mojbani",
   title: "Applied AI Student",
@@ -12,9 +16,9 @@ const userData: User = {
   avatarUrl: myAvatar,
   cvLink: "/CV_Rahim.pdf",
   socialLinks: {
-    linkedin: "https://linkedin.com/in/abd-rahim-mojbani-708887296",
+    linkedin: "https://www.linkedin.com/in/abd-rahim-mojbani",
     github: "https://github.com/Abd-Rahim1",
-    twitter: "https://twitter.com/Abd_Rahim1",
+    twitter: "https://twitter.com/AbdRahimMojbani"
   },
   about: `
     I am a final-year student specializing in Applied Artificial Intelligence at the Pristini School of AI in Tunisia. 
@@ -37,7 +41,7 @@ const userData: User = {
       id: 2,
       title: "Earthquake Detection System",
       description: "Predicts potential earthquake activity using ML models, integrated into a simple website for demo.",
-      technologies: ["Python", "ML libraries", "HTML", "CSS", "JavaScript","Agile Methodologies"],
+      technologies: ["Python", "ML libraries", "HTML", "CSS", "JavaScript", "Agile Methodologies"],
       domain: "Machine Learning",
       projectLink: "https://github.com/Abd-Rahim1/Earthquake-Detection-System",
       demoLink: "https://abd-rahim1.github.io/Earthquake-Detection-System/",
@@ -65,7 +69,7 @@ const userData: User = {
       id: 5,
       title: "Portfolio Website",
       description: "Personal portfolio website showcasing projects, resume, and interactive sections built with React, TypeScript, and Tailwind CSS.",
-      technologies: ["HTML", "CSS", "TypeScript", "React","TailwindCSS"],
+      technologies: ["HTML", "CSS", "TypeScript", "React", "TailwindCSS"],
       domain: "Web Development",
       projectLink: "https://github.com/Abd-Rahim1/Professional-Portfolio-Website.git",
       image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -74,7 +78,7 @@ const userData: User = {
       id: 6,
       title: "Trousers Keypoint Detection System",
       description: "Built an AI system to detect keypoints on trousers using deep learning and computer vision for automated garment analysis.",
-      technologies: ["Python","DeepFashion2 Dataset","Detectron2" ,"OpenCV","TensorFlow", "Tkinter"],
+      technologies: ["Python", "DeepFashion2 Dataset", "Detectron2", "OpenCV", "TensorFlow", "Tkinter"],
       domain: "Computer Vision ",
       projectLink: "https://github.com/Abd-Rahim1/Trouser-Keypoint-Detection-System.git",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShYubu42x6tUAXb_bUYNQmvbZdBIxJw4MkaQ&s"
@@ -89,68 +93,83 @@ const userData: User = {
       image: "https://intelliarts.com/wp-content/uploads/2023/04/1f990c_d3a66935e5634422b06e7e9b074e6091mv2-e1694509810261.webp"
     }
   ],
-experience: [
-  {
-    id: 1,
-    role: "Data Science Intern - Deep Learning Pipeline for Trouser Keypoint Detection",
-    company: "Sartex Group",
-    location: "Ksar Hellal, Monastir",
-    startDate: "Jul 2025",
-    endDate: "Aug 2025",
-    description: [
-      "Conducted comprehensive data preparation and cleaning on the DeepFashion2 dataset to ensure high-quality inputs for keypoint detection tasks.",
-      "Designed and implemented data augmentation and preprocessing pipelines to improve model accuracy.",
-      "Trained and fine-tuned Detectron2 models using advanced transfer learning techniques.",
-      "Developed a user-friendly Tkinter-based GUI to facilitate annotation correction and streamline the dataset labeling process.",
-      "Collaborated closely with the data science team to evaluate model performance and optimize detection accuracy."
-    ]
-  },
-  {
-    id: 2,
-    role: "IT Intern – Network & Systems Support",
-    company: "Sartex Group",
-    location: "Ksar Hellal, Monastir",
-    startDate: "Jun 2024",
-    endDate: "Jul 2024",
-    description: [
-      "Assisted with system maintenance and network monitoring.",
-      "Troubleshot hardware and software issues, gaining practical experience in IT support and system administration.",
-      "Worked with the IT team to optimize network performance and maintain system security."
-    ]
-  }
-],
+  experience: [
+    {
+      id: 1,
+      role: "Data Science Intern - Trouser Keypoint Detection",
+      company: "Sartex Group",
+      location: "Ksar Hellal, Monastir",
+      startDate: "Jul 2025",
+      endDate: "Aug 2025",
+      skills: ["Python", "Detectron2", "Tkinter", "Data Cleaning"],
+      sartexlogo: sartexlogo,
+      description: [
+        "Conducted comprehensive data preparation and cleaning on the DeepFashion2 dataset to ensure high-quality inputs for keypoint detection tasks.",
+        "Designed and implemented data augmentation and preprocessing pipelines to improve model accuracy.",
+        "Trained and fine-tuned Detectron2 models using advanced transfer learning techniques.",
+        "Developed a user-friendly Tkinter-based GUI to facilitate annotation correction and streamline the dataset labeling process.",
+        "Collaborated closely with the data science team to evaluate model performance and optimize detection accuracy."
+      ]
+    },
+    {
+      id: 2,
+      role: "IT Intern – Network & Systems Support",
+      company: "Sartex Group",
+      location: "Ksar Hellal, Monastir",
+      startDate: "Jun 2024",
+      endDate: "Jul 2024",
+      skills: ["Python", "Detectron2", "Tkinter", "Data Cleaning"],
+      sartexlogo: sartexlogo,
+      description: [
+        "Assisted with system maintenance and network monitoring.",
+        "Troubleshot hardware and software issues, gaining practical experience in IT support and system administration.",
+        "Worked with the IT team to optimize network performance and maintain system security."
+      ]
+    }
+  ],
 
-certifications: [
-  {
-    id: 1,
-    title: "Image Segmentation, Filtering & Region Analysis",
-    issuer: "Coursera (MathWorks)",
-    date: "2025",
-    link: "https://www.coursera.org/account/accomplishments"
-  },
-  {
-    id: 2,
-    title: "Building Transformer-Based Natural Language Processing Applications",
-    issuer: "NVIDIA",
-    date: "2025",
-    link: "/nvidia_nlp_certificate.pdf"
-  },
-  {
-    id: 3,
-    title: "Building RAG Agents with LLMs",
-    issuer: "NVIDIA",
-    date: "2025",
-    link: "https://learn.nvidia.com/certificates?id=5obFKRq2TZKN2G6MPE9ovw#"
-  }  
-],
+  certifications: [
+    {
+      id: 1,
+      title: "Image Segmentation, Filtering & Region Analysis",
+      issuer: "Coursera (MathWorks)",
+      date: "2025",
+      link: "https://coursera.org/share/760a8587e27b699d9b77accf0ee96b84",
+      logo: mathworkslogo,
+      pdf: "/Segmentation.pdf",
+      image: "/mathworks_segmentation.pdf",
+    },
+    {
+      id: 2,
+      title: "Building Transformer-Based Natural Language Processing Applications",
+      issuer: "NVIDIA",
+      date: "2025",
+      link: "/nvidia_nlp_certificate.pdf",
+      logo: nvidialogo,
+      pdf: "/nvidia_nlp_certificate.pdf",
+      image: "/llm.png",
+    },
+    {
+      id: 3,
+      title: "Building RAG Agents with LLMs",
+      issuer: "NVIDIA",
+      date: "2025",
+      link: "https://learn.nvidia.com/certificates?id=5obFKRq2TZKN2G6MPE9ovw#",
+      logo: nvidialogo,
+      pdf: "/nvidia_rag_certificate.pdf",
+      image: "/rag.png",
+    }
+  ],
   education: [
     {
       id: 1,
       degree: "BSc in Applied Artificial Intelligence",
+      type: 'University',
       institution: "Pristini School of AI",
       location: "Sousse , Tunisia",
       startDate: "2023",
       endDate: "Present",
+      logo: logo,
       description: [
         "Specialized in Machine Learning, Deep Learning, and Computer Vision.",
         "Completed multiple projects including data analysis and AI model development.",
