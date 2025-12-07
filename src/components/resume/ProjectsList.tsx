@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ChevronDown } from "lucide-react";
-import { Project } from "../types";
+import { Project } from '../../types';
 
 interface ProjectCardProps {
   project: Project;
