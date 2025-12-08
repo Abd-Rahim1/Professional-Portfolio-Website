@@ -22,10 +22,10 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     alert('Thank you for your message! I will get back to you soon.');
     setFormData({ name: '', email: '', message: '' });
     setIsSubmitting(false);
@@ -61,7 +61,7 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
               Contact Information
             </h3>
-            
+
             <div className="space-y-6">
               {/* Email */}
               <div className="flex items-start gap-4">
@@ -70,7 +70,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-white">Email</h4>
-                  <a 
+                  <a
                     href={`mailto:${userData.email}`}
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
@@ -86,7 +86,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-white">Phone</h4>
-                  <a 
+                  <a
                     href={`tel:${userData.phone}`}
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
@@ -156,7 +156,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                placeholder="John Doe"
+                placeholder="Name Lastname"
               />
             </div>
 
@@ -172,7 +172,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                placeholder="john@example.com"
+                placeholder="email@example.com"
               />
             </div>
 
